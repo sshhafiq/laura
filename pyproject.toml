@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "laura"
+version = "0.1.0"
+description = "Open-source engineering intelligence: PR effort scoring, AI ROI, DORA metrics, and a coding-agent model router"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Shafiq Moltafet" }]
+keywords = ["engineering-intelligence", "developer-productivity", "dora", "ai-roi", "code-review"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+temporal = ["temporalio>=1.7"]
+
+[project.scripts]
+laura = "laura.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+include = ["laura*"]
